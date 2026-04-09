@@ -1,2 +1,7 @@
 .env
 node_modules
+createTable.js
+data.js
+dropTable.js
+logTable.js
+seedTable.js
