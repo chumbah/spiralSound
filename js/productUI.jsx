@@ -2,7 +2,10 @@ import { addBtnListeners } from './cartService.js'
 
 // ===== Rendering products =====
 
-export function renderProducts(products) {
+export default function RenderProducts (){
+  
+    
+ function renderProducts(products) {
   const albumsContainer = document.getElementById('products-container')
   const cards = products.map((album) => {
     return `
@@ -15,11 +18,18 @@ export function renderProducts(products) {
         <p class="genre-label">${album.genre}</p>
       </div>
     `
+    
   }).join('')
 
   albumsContainer.innerHTML = cards
   addBtnListeners()
 }
+return(
+  <RenderProducts/>
+)
+
+}
+
 
 // ===== Handling filtering =====
 
@@ -30,3 +40,6 @@ export async function applySearchFilter() {
   const products = await getProducts(filters)
   renderProducts(products)
 }
+
+
+
